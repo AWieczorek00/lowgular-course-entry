@@ -4,49 +4,148 @@
     "workspaceTsConfig": "tsconfig.json",
     "libsFolder": "projects"
   },
+  "entityRelations": {
+    "component": {
+      "model": [
+        "PROPERTY"
+      ],
+      "service": [
+        "CONSTRUCTOR"
+      ],
+      "router": [
+        "CONSTRUCTOR"
+      ],
+      "activatedRoute": [
+        "CONSTRUCTOR"
+      ]
+    },
+    "service": {
+      "httpClient": [
+        "CONSTRUCTOR"
+      ],
+      "model": [
+        "PARAMETER",
+        "RETURN"
+      ]
+    }
+  },
+  "external": {
+    "httpClient": {
+      "type": "HttpClient",
+      "module": "@angular/common/http"
+    },
+    "router": {
+      "type": "Router",
+      "module": "@angular/router"
+    },
+    "activatedRoute": {
+      "type": "ActivatedRoute",
+      "module": "@angular/router"
+    }
+  },
   "entities": {
     "component": {
       "id": "component",
       "type": "ANGULAR_COMPONENT",
       "suffix": "Component",
-      "folder": "ui/$name$",
+      "folder": "components/$name$",
       "insideOf": "App",
       "config": {
         "stylesExtension": "none",
-        "viewEncapsulation": "Emulated",
+        "viewEncapsulation": "None",
         "selector": "generated",
         "changeDetectionStrategy": "OnPush"
       }
-    },
-    "dataService": {
-      "id": "dataService",
-      "type": "SERVICE",
-      "suffix": "Service",
-      "folder": "services",
-      "insideOf": "App"
     },
     "model": {
       "id": "model",
       "type": "DATA_STRUCTURE",
       "suffix": "Model",
-      "folder": "model",
+      "folder": "models",
       "insideOf": "App"
-    },
-    "response": {
-      "id": "response",
-      "type": "DATA_STRUCTURE",
-      "suffix": "Response",
-      "folder": "services",
-      "insideOf": "App"
-    }
-  },
-  "entityRelations": {
-    "smartComponent": {
-      "httpClient": "CONSTRUCTOR",
-      "dataService": "CONSTRUCTOR"
     },
     "dataService": {
-      "httpClient": "CONSTRUCTOR"
+      "id": "dataService",
+      "type": "ANGULAR_SERVICE",
+      "suffix": "Service",
+      "folder": "services",
+      "insideOf": "App"
+    },
+    "page": {
+      "id": "page",
+      "type": "ANGULAR_COMPONENT",
+      "suffix": "Page",
+      "folder": "pages/$name$",
+      "insideOf": "App",
+      "config": {
+        "stylesExtension": "none",
+        "viewEncapsulation": "None",
+        "selector": "generated",
+        "changeDetectionStrategy": "OnPush"
+      }
+    },
+
+    "smartComponent": {
+      "id": "smartComponent",
+      "type": "ANGULAR_COMPONENT",
+      "suffix": "Component",
+      "folder": "adapters/primary/components/$name$",
+      "insideOf": "Lib",
+      "config": {
+        "viewEncapsulation": "None",
+        "selector": "generated",
+        "changeDetectionStrategy": "OnPush"
+      }
+    },
+
+    "directive": {
+      "id": "directive",
+      "type": "ANGULAR",
+      "suffix": "Directive",
+      "folder": "adapters/primary/directives/$name$",
+      "insideOf": "Lib"
+    },
+    "resolver": {
+      "id": "resolver",
+      "type": "ANGULAR",
+      "suffix": "Resolver",
+      "folder": "adapters/primary/resolvers/$name$",
+      "insideOf": "Lib"
+    },
+    "guard": {
+      "id": "guard",
+      "type": "ANGULAR",
+      "suffix": "Guard",
+      "folder": "adapters/primary/guards/$name$",
+      "insideOf": "Lib"
+    },
+    "dto": {
+      "id": "dto",
+      "type": "DATA_STRUCTURE",
+      "suffix": "DTO",
+      "folder": "application/ports/secondary/dto",
+      "insideOf": "Lib"
+    },
+    "repository": {
+      "id": "repository",
+      "type": "ABSTRACTION",
+      "suffix": "Repository",
+      "folder": "application/ports/secondary/dto/$name$",
+      "insideOf": "Lib"
+    },
+    "responseObject": {
+      "id": "responseObject",
+      "type": "DATA_STRUCTURE",
+      "suffix": "Response",
+      "folder": "adapters/secondary/services/response",
+      "insideOf": "Lib"
+    },
+    "service": {
+      "id": "service",
+      "type": "ANGULAR_SERVICE",
+      "suffix": "Service",
+      "folder": "adapters/secondary/services/service/$name$",
+      "insideOf": "Lib"
     }
   }
 }
